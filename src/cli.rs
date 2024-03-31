@@ -45,7 +45,7 @@ pub fn get_arguments() -> ArgMatches {
         .arg(
             Arg::new("verbose")
                 .short('v')
-                .long("ver bose")
+                .long("verbose")
                 .action(clap::ArgAction::SetTrue)
                 .help("Verbose mode"),
         )
