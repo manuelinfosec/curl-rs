@@ -40,7 +40,8 @@ pub fn get_arguments() -> ArgMatches {
             Arg::new("headers")
                 .short('H')
                 .long("header")
-                .action(clap::ArgAction::Append),
+                .action(clap::ArgAction::Append)
+                .help("Request Headers"),
         )
         .arg(
             Arg::new("verbose")
