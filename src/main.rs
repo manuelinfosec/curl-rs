@@ -1,7 +1,10 @@
 use clap::ArgMatches;
 
 mod cli;
+mod constants;
 mod http;
+mod types;
+mod utils;
 
 fn main() {
     // parse command line arguments
@@ -18,7 +21,7 @@ fn main() {
     // parse request method
     let method: &String = matches
         .get_one::<String>("x-method")
-        .expect("Could not parse HTTP method");
+        .unwrap_or(&String::from("GET"));
     // parse request headers
     let headers: Vec<&str> = matches
         .get_many::<String>("headers")
